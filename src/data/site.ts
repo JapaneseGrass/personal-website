@@ -21,8 +21,8 @@ export const site = {
 
   // A short, scannable bio for the About section. 2–3 sentences works best.
   about: [
-    'I’m a software engineer who enjoys turning ambiguous problems into shipped, maintainable software. I care about readable code, sensible tests, and interfaces that feel obvious to use.',
-    'Outside of work I’m usually exploring a new tool, contributing to open source, or building small projects to learn something hands-on.',
+    'I’m a multi-faceted thinker and doer who enjoys the process of observation and understanding to develop human-centric solutions that contribute to someone’s ability to perform their work in a more fulfilling way. I care about solutions that make sense and can genuinely make a meaningful difference in someone’s day-to-day experience.',
+    'Outside of work, I’m keeping up with the ever-evolving domains that pique my interest and align with the trajectory of my desired career. At the moment, I’m following advancements in artificial intelligence, ramping up my knowledge of cybersecurity, and inventing software and hardware solutions to problems in my personal life.',
   ],
 };
 
