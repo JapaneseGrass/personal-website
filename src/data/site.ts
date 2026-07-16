@@ -4,18 +4,18 @@
 // ─────────────────────────────────────────────────────────────────────────
 
 export const site = {
-  name: 'Angel Rodriguez',
+  name: 'Angel Rodriguez II',
   role: 'Software Engineer',
   tagline:
-    'I build reliable, well-tested web applications — from clean APIs to polished front-ends.',
-  location: 'Austin, TX',
+    'I build reliable, well-tested software solutions that target real world problems and inspire community.',
+  location: 'El Paso, TX',
   email: 'angeldevelops@gmail.com',
   // Path to your resume PDF. Drop the file in `public/` (e.g. public/resume.pdf).
   resume: 'resume.pdf',
 
   socials: [
-    { label: 'GitHub', href: 'https://github.com/angeldevelops', icon: 'github' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-handle', icon: 'linkedin' },
+    { label: 'GitHub', href: 'https://github.com/JapaneseGrass', icon: 'github' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/angel-rodriguez-ii-58043a1b7/', icon: 'linkedin' },
     { label: 'Email', href: 'mailto:angeldevelops@gmail.com', icon: 'mail' },
   ],
 
