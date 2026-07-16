@@ -19,6 +19,14 @@ const projects = (await getCollection('projects')).sort(
       {
         projects.map((project) => (
           <article class={`project-card reveal${project.data.featured ? ' is-featured' : ''}`}>
+            {project.data.image && (
+              <img
+                class="project-image"
+                src={`${import.meta.env.BASE_URL}projects/${project.data.image}`}
+                alt={project.data.imageAlt ?? project.data.title}
+                loading="lazy"
+              />
+            )}
             {project.data.featured && <span class="badge">Featured</span>}
             <h3 class="project-title">{project.data.title}</h3>
             <p class="project-desc">{project.data.description}</p>
@@ -70,6 +78,14 @@ const projects = (await getCollection('projects')).sort(
   .project-card:hover {
     transform: translateY(-4px);
     border-color: var(--accent);
+  }
+  .project-image {
+    width: calc(100% + 2.8rem);
+    margin: -1.4rem -1.4rem 1rem;
+    border-radius: 0.85rem 0.85rem 0 0;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border);
   }
   .is-featured {
     border-color: color-mix(in srgb, var(--accent) 40%, var(--border));

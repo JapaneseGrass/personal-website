@@ -25,6 +25,10 @@ const projects = defineCollection({
     tech: z.array(z.string()).default([]),
     repo: z.string().url().optional(),
     demo: z.string().url().optional(),
+    // Filename of an image in `public/projects/`, e.g. "drink-machine.jpg".
+    // Shown at the top of the project card when present.
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
     featured: z.boolean().default(false),
     order: z.number().default(99),
   }),

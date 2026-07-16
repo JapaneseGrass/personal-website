@@ -16,7 +16,9 @@
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" https://japanesegrass.github.io/personal-website/)",
       "Bash(git push *)",
       "Bash(curl -s -o /dev/null -w \"Live site: HTTP %{http_code}\\\\n\" https://japanesegrass.github.io/personal-website/)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(mkdir -p public/projects)",
+      "Bash(touch public/projects/.gitkeep)"
     ]
   }
 }
