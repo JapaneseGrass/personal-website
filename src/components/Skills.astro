@@ -1,0 +1,51 @@
+---
+import { skillGroups } from '../data/site';
+---
+
+<section id="skills" class="section">
+  <div class="container reveal">
+    <p class="eyebrow">04 — Skills</p>
+    <h2 class="section-title">Tools I work with</h2>
+    <p class="section-lead">
+      Technologies I reach for, grouped by where they fit in the stack.
+    </p>
+
+    <div class="skills-grid">
+      {
+        skillGroups.map((group) => (
+          <div class="skill-group reveal">
+            <h3 class="skill-group-name">{group.name}</h3>
+            <ul class="chip-list">
+              {group.items.map((item) => (
+                <li class="chip">{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  .skill-group {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 0.85rem;
+    padding: 1.3rem;
+    box-shadow: var(--shadow);
+  }
+  .skill-group-name {
+    font-size: 0.95rem;
+    margin: 0 0 0.9rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

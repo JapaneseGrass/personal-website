@@ -1,0 +1,64 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+---
+
+<section id="contact" class="section">
+  <div class="container contact reveal">
+    <p class="eyebrow">05 — Contact</p>
+    <h2 class="section-title">Let’s work together</h2>
+    <p class="contact-lead">
+      I’m currently open to new opportunities. Whether you have a role in mind or
+      just want to say hello, my inbox is always open — I’ll do my best to get
+      back to you.
+    </p>
+    <a class="btn btn-primary" href={`mailto:${site.email}`}>
+      <Icon name="mail" size={18} /> Say hello
+    </a>
+
+    <ul class="contact-socials">
+      {
+        site.socials.map((s) => (
+          <li>
+            <a href={s.href} target="_blank" rel="noopener">
+              <Icon name={s.icon} size={18} /> {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .contact {
+    text-align: center;
+    max-width: 620px;
+  }
+  .contact-lead {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+  .contact-socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 2.5rem 0 0;
+  }
+  .contact-socials a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .contact-socials a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+</style>

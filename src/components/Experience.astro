@@ -1,0 +1,123 @@
+---
+import { getCollection } from 'astro:content';
+
+const jobs = (await getCollection('experience')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<section id="experience" class="section">
+  <div class="container reveal">
+    <p class="eyebrow">02 — Experience</p>
+    <h2 class="section-title">Where I’ve worked</h2>
+    <p class="section-lead">
+      A timeline of roles, what I owned, and the impact I had.
+    </p>
+
+    <ol class="timeline">
+      {
+        jobs.map((job) => (
+          <li class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true" />
+            <div class="timeline-body">
+              <div class="job-head">
+                <h3 class="job-role">
+                  {job.data.role}{' '}
+                  <span class="job-company">· {job.data.company}</span>
+                </h3>
+                <span class="job-dates">
+                  {job.data.start} – {job.data.end}
+                </span>
+              </div>
+              {job.data.location && (
+                <p class="job-location">{job.data.location}</p>
+              )}
+              <ul class="job-highlights">
+                {job.data.highlights.map((h) => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+              {job.data.tech.length > 0 && (
+                <ul class="chip-list">
+                  {job.data.tech.map((t) => (
+                    <li class="chip">{t}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: var(--border);
+  }
+  .timeline-item {
+    position: relative;
+    padding: 0 0 2.25rem 2.25rem;
+  }
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+  .timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+  .job-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+    justify-content: space-between;
+  }
+  .job-role {
+    font-size: 1.15rem;
+    margin: 0;
+  }
+  .job-company {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .job-dates {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .job-location {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0.15rem 0 0.6rem;
+  }
+  .job-highlights {
+    margin: 0 0 0.9rem;
+    padding-left: 1.1rem;
+    color: var(--text-muted);
+  }
+  .job-highlights li {
+    margin-bottom: 0.35rem;
+  }
+</style>

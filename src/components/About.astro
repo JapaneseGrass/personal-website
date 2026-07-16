@@ -1,0 +1,67 @@
+---
+import { site } from '../data/site';
+---
+
+<section id="about" class="section">
+  <div class="container reveal">
+    <p class="eyebrow">01 — About</p>
+    <h2 class="section-title">A bit about me</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        {site.about.map((p) => <p>{p}</p>)}
+      </div>
+      <aside class="about-facts">
+        <dl>
+          <div><dt>Role</dt><dd>{site.role}</dd></div>
+          <div><dt>Location</dt><dd>{site.location}</dd></div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+          </div>
+          <div><dt>Open to</dt><dd>Full-time &amp; contract roles</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    gap: 2rem;
+  }
+  .about-text p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+  }
+  .about-facts {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 0.85rem;
+    padding: 1.4rem 1.5rem;
+    box-shadow: var(--shadow);
+    height: fit-content;
+  }
+  .about-facts dl {
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+  }
+  .about-facts dt {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+  }
+  .about-facts dd {
+    margin: 0.15rem 0 0;
+    font-weight: 600;
+  }
+  @media (min-width: 760px) {
+    .about-grid {
+      grid-template-columns: 1.7fr 1fr;
+      gap: 3rem;
+    }
+  }
+</style>
