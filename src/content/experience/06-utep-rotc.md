@@ -1,9 +1,9 @@
 ---
-role: "Cadet, ROTC Program"
+role: "Cadet, U.S. Army ROTC"
 company: "University of Texas at El Paso"
 location: "El Paso, TX"
-start: "2015"
-end: "2016"
+start: "Aug 2015"
+end: "Aug 2016"
 order: 6
 highlights:
   - "Trained in leadership, discipline, and teamwork through the Army ROTC program."

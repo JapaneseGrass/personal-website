@@ -3,7 +3,7 @@ role: "Pastry Shop Assistant"
 company: "Pastry Shop"
 location: "San Elizario, TX"
 start: "High school summers"
-end: "2015"
+end: "High school summers"
 order: 7
 highlights:
   - "Worked summers at a local pastry shop, assisting with baking, prep, and customer service."

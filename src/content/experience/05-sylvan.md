@@ -2,8 +2,8 @@
 role: "Programming Instructor"
 company: "Sylvan Learning"
 location: "El Paso, TX"
-start: "Summer 2019"
-end: "Summer 2019"
+start: "Summer of 2019"
+end: "Summer of 2019"
 order: 5
 highlights:
   - "Taught an introductory programming course for kids, making coding concepts approachable and fun."

@@ -18,7 +18,18 @@
       "Bash(curl -s -o /dev/null -w \"Live site: HTTP %{http_code}\\\\n\" https://japanesegrass.github.io/personal-website/)",
       "Bash(git rm *)",
       "Bash(mkdir -p public/projects)",
-      "Bash(touch public/projects/.gitkeep)"
+      "Bash(touch public/projects/.gitkeep)",
+      "Bash(echo \"=== project .claude ===\" && ls -la \"/Users/angelrodriguez/personal website/.claude\" 2>/dev/null; echo; echo \"=== project skills dir ===\" && ls -la \"/Users/angelrodriguez/personal website/.claude/skills\" 2>/dev/null || echo \"\\(none yet\\)\"; echo; echo \"=== user skills dir ===\" && ls -la ~/.claude/skills 2>/dev/null || echo \"\\(none yet\\)\")",
+      "Read(//Users/angelrodriguez/**)",
+      "Bash(mkdir -p ~/.claude/skills)",
+      "Bash(ln -sfn ~/.agents/skills/hallmark ~/.claude/skills/hallmark)",
+      "Bash(textutil -convert txt -output resume.txt \"/Users/angelrodriguez/Downloads/Resume - Angel Rodriguez II\\(6\\).docx\")",
+      "Read(//Applications/Google Chrome.app/Contents/MacOS/**)",
+      "Bash(command -v pandoc)",
+      "Bash(command -v cupsfilter)",
+      "Bash(unzip -l \"/Users/angelrodriguez/Downloads/Resume - Angel Rodriguez II\\(6\\).docx\")",
+      "Bash(textutil -convert html -output resume.html \"/Users/angelrodriguez/Downloads/Resume - Angel Rodriguez II\\(6\\).docx\")",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=\"resume.pdf\" \"file://$\\(pwd\\)/resume.html\")"
     ]
   }
 }
