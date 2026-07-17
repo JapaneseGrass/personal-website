@@ -30,18 +30,29 @@ export const site = {
 export const skillGroups: { name: string; items: string[] }[] = [
   {
     name: 'Languages',
-    items: ['TypeScript', 'JavaScript', 'Python', 'Go', 'SQL'],
+    items: ['Python', 'TypeScript', 'JavaScript', 'SQL', 'HTML & CSS'],
   },
   {
-    name: 'Frontend',
-    items: ['React', 'Astro', 'Next.js', 'HTML & CSS', 'Tailwind'],
+    name: 'Frameworks & Libraries',
+    items: ['React Native', 'Expo', 'FastAPI', 'Astro', 'Node.js'],
   },
   {
-    name: 'Backend',
-    items: ['Node.js', 'PostgreSQL', 'REST APIs', 'GraphQL', 'Redis'],
+    name: 'Cloud & DevOps',
+    items: ['AWS', 'CI/CD', 'Infrastructure as Code', 'Supabase', 'Render', 'Git'],
   },
   {
-    name: 'Tooling & Cloud',
-    items: ['Git', 'Docker', 'AWS', 'CI/CD', 'Vitest / Jest'],
+    name: 'Tools & Hardware',
+    items: ['SQLite', 'PostgreSQL', 'REST APIs', 'Raspberry Pi', 'AI-assisted development'],
+  },
+  {
+    name: 'Professional',
+    items: [
+      'Project management',
+      'Stakeholder communication',
+      'Technical documentation',
+      'Cross-functional collaboration',
+      'Public service',
+      'CJIS clearance',
+    ],
   },
 ];

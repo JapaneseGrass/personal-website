@@ -29,7 +29,9 @@
       "Bash(command -v cupsfilter)",
       "Bash(unzip -l \"/Users/angelrodriguez/Downloads/Resume - Angel Rodriguez II\\(6\\).docx\")",
       "Bash(textutil -convert html -output resume.html \"/Users/angelrodriguez/Downloads/Resume - Angel Rodriguez II\\(6\\).docx\")",
-      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=\"resume.pdf\" \"file://$\\(pwd\\)/resume.html\")"
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=\"resume.pdf\" \"file://$\\(pwd\\)/resume.html\")",
+      "Bash(textutil -convert docx -output resume.docx resume.html)",
+      "Bash(cp resume.pdf \"../public/resume.pdf\")"
     ]
   }
 }
