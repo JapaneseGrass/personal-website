@@ -1,8 +1,9 @@
 ---
 import { site } from '../data/site';
 import Icon from './Icon.astro';
+import { withBase } from '../utils/url';
 
-const resumeHref = `${import.meta.env.BASE_URL}${site.resume}`;
+const resumeHref = withBase(site.resume);
 ---
 
 <section id="top" class="hero">

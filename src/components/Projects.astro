@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Icon from './Icon.astro';
+import { withBase } from '../utils/url';
 
 const projects = (await getCollection('projects')).sort(
   (a, b) => Number(b.data.featured) - Number(a.data.featured) || a.data.order - b.data.order
@@ -22,7 +23,7 @@ const projects = (await getCollection('projects')).sort(
             {project.data.image && (
               <img
                 class="project-image"
-                src={`${import.meta.env.BASE_URL}projects/${project.data.image}`}
+                src={withBase(`projects/${project.data.image}`)}
                 alt={project.data.imageAlt ?? project.data.title}
                 loading="lazy"
               />

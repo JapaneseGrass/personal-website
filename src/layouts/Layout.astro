@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { withBase } from '../utils/url';
 
 interface Props {
   title?: string;
@@ -36,7 +37,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
     <link
       rel="icon"
       type="image/svg+xml"
-      href={`${import.meta.env.BASE_URL}favicon.svg`}
+      href={withBase('favicon.svg')}
     />
 
     <!-- Set theme before paint to avoid a flash of the wrong theme -->
