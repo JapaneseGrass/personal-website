@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/site';
+import Icon from './Icon.astro';
 
 const links = [
   { href: '#about', label: 'About' },
@@ -19,8 +20,8 @@ const links = [
     </nav>
 
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme">
-      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.7-5.7 1.4-1.4M4.9 19.1l1.4-1.4m0-11.4L4.9 4.9m14.2 14.2-1.4-1.4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg>
-      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      <Icon name="sun" size={18} class="icon-sun" />
+      <Icon name="moon" size={18} class="icon-moon" />
     </button>
   </div>
 </header>
@@ -97,11 +98,10 @@ const links = [
       margin-inline-start: 0;
     }
   }
-  /* Show the icon for the theme you can switch *to* */
-  :global(:root[data-theme='light']) .icon-sun {
-    display: none;
-  }
-  :global(:root[data-theme='dark']) .icon-moon {
+  /* Show the icon for the theme you can switch *to*.
+     Fully global because the SVGs now live in the Icon component's scope. */
+  :global(:root[data-theme='light'] .icon-sun),
+  :global(:root[data-theme='dark'] .icon-moon) {
     display: none;
   }
 </style>

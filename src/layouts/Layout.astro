@@ -14,6 +14,8 @@ const {
 
 // Works whether or not a `base` path is configured for GitHub Pages.
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
+// Absolute URL to the social-share image (og.png lives in public/).
+const ogImage = new URL(withBase('og.png'), Astro.site ?? Astro.url);
 ---
 
 <!doctype html>
@@ -32,7 +34,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
 
     <link
       rel="icon"
