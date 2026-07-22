@@ -15,6 +15,37 @@
         "fingerprint": "1ae8af60c4c886c9",
         "at": "2026-07-22"
       }
+    },
+    {
+      "slug": "park-ranger-tools",
+      "label": "the Truck Inspection App description",
+      "source": {
+        "repo": "JapaneseGrass/ParkRangerTools",
+        "branch": "main",
+        "path": "README.md",
+        "section": "## Truck Inspection App (MVP)"
+      },
+      "copy": "src/content/projects/park-ranger-tools.md",
+      "acknowledged": {
+        "fingerprint": "5645ade0f3292a26",
+        "at": "2026-07-22"
+      }
+    },
+    {
+      "//": "drink-machine's README is empty, so this watches the vision doc instead. That describes intent rather than shipped behaviour — see the note in the site README.",
+      "slug": "drink-machine",
+      "label": "the Drink Machine UX vision",
+      "source": {
+        "repo": "JapaneseGrass/drink-machine",
+        "branch": "main",
+        "path": "CLAUDE.md",
+        "section": "## User Experience Vision"
+      },
+      "copy": "src/content/projects/drink-machine.md",
+      "acknowledged": {
+        "fingerprint": "35362309566eb226",
+        "at": "2026-07-22"
+      }
     }
   ]
 }

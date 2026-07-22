@@ -65,6 +65,34 @@ order: 1
 ---
 ```
 
+## Keeping project copy honest
+
+Project cards describe apps that live in other repos, and nothing regenerates
+that prose — so a feature landing upstream quietly makes this site wrong.
+`.github/workflows/check-project-copy.yml` runs weekly and fingerprints the
+upstream section that documents each app's features, failing when it has moved
+since the card here was last reviewed.
+
+```bash
+npm run check:copy              # verify (what CI runs)
+npm run check:copy -- --accept  # record the current upstream state as reviewed
+```
+
+When it fails, re-read the named card against the app, fix the description and
+tech list if a user-visible feature changed, then `--accept`. That flag asserts
+you actually looked, so don't run it just to clear the red. Watched sources live
+in `scripts/project-copy-sync.json`; add a project by appending an entry and
+running `--accept`.
+
+Two caveats worth knowing:
+
+- **Drink Machine** has an empty `README.md`, so it watches the
+  `## User Experience Vision` section of its `CLAUDE.md`. That documents intent
+  rather than shipped behaviour — writing a real README upstream would make this
+  check meaningfully stronger.
+- **Personal Website** is deliberately unwatched. Its card and its source are
+  this same repo, so it cannot drift behind an unobserved push.
+
 ## Deploy to GitHub Pages
 
 1. **Create the repo** and push this code:
