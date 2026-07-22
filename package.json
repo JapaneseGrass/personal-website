@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check:copy": "node scripts/check-project-copy.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.4.1",

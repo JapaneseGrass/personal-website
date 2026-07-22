@@ -1,0 +1,20 @@
+{
+  "//": "Watched upstream sources for src/content/projects/ cards. See scripts/check-project-copy.mjs.",
+  "projects": [
+    {
+      "slug": "mygarage",
+      "label": "the MyGarage feature list",
+      "source": {
+        "repo": "JapaneseGrass/vehicle-maintenance-log",
+        "branch": "master",
+        "path": "README.md",
+        "section": "## Features (MVP)"
+      },
+      "copy": "src/content/projects/mygarage.md",
+      "acknowledged": {
+        "fingerprint": "1ae8af60c4c886c9",
+        "at": "2026-07-22"
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# Fails when a project card here describes an app that has since moved on.
+#
+# The drift is caused by a push to the *app's* repo, which cannot trigger a run
+# in this one, so the schedule is what actually does the work — the push
+# trigger only re-verifies when the copy itself is edited.
+name: Check project copy
+
+on:
+  schedule:
+    # Mondays, 14:00 UTC (~8am Denver). GitHub disables cron in repos with no
+    # activity for 60 days; re-enable it from the Actions tab if that happens.
+    - cron: '0 14 * * 1'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/projects/**'
+      - 'scripts/check-project-copy.mjs'
+      - 'scripts/project-copy-sync.json'
+      - '.github/workflows/check-project-copy.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      # No `npm ci` — the check uses only the Node standard library, so it
+      # needs no install step and stays fast enough to run weekly.
+      - run: npm run check:copy
