@@ -5,4 +5,14 @@ tech: ["Raspberry Pi", "Python", "FastAPI", "gpiozero", "SQLite"]
 repo: "https://github.com/JapaneseGrass/drink-machine"
 featured: true
 order: 1
+# Add photos and videos below once you have them. Drop the files into
+# public/projects/drink-machine/ and list them here, e.g.:
+# media:
+#   - type: image
+#     src: "projects/drink-machine/build-1.jpg"
+#     alt: "The finished machine with all 8 pumps"
+#   - type: video
+#     src: "projects/drink-machine/pour.mp4"
+#     poster: "projects/drink-machine/pour-poster.jpg"
+media: []
 ---

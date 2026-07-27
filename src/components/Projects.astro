@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Icon from './Icon.astro';
+import ProjectMedia from './ProjectMedia.astro';
 import { withBase } from '../utils/url';
 
 const projects = (await getCollection('projects')).sort(
@@ -19,7 +20,9 @@ const projects = (await getCollection('projects')).sort(
     <div class="project-grid">
       {
         projects.map((project) => (
-          <article class={`project-card reveal${project.data.featured ? ' is-featured' : ''}`}>
+          <article
+            class={`project-card reveal${project.data.featured ? ' is-featured' : ''}${project.data.media.length ? ' has-media' : ''}`}
+          >
             {project.data.image && (
               <img
                 class="project-image"
@@ -38,6 +41,10 @@ const projects = (await getCollection('projects')).sort(
                   <li class="chip">{t}</li>
                 ))}
               </ul>
+            )}
+
+            {project.data.media.length > 0 && (
+              <ProjectMedia media={project.data.media} title={project.data.title} />
             )}
 
             <div class="project-links">
@@ -90,6 +97,10 @@ const projects = (await getCollection('projects')).sort(
   }
   .is-featured {
     border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  }
+  /* A card with a photo/video gallery gets the full row so the media has room */
+  .has-media {
+    grid-column: 1 / -1;
   }
   .badge {
     position: absolute;

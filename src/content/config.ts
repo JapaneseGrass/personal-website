@@ -29,6 +29,20 @@ const projects = defineCollection({
     // Shown at the top of the project card when present.
     image: z.string().optional(),
     imageAlt: z.string().optional(),
+    // A gallery of photos and videos shown at the bottom of the card.
+    // Drop the files in `public/projects/<slug>/` and reference them by path
+    // relative to `public/`, e.g. "projects/drink-machine/pour.mp4".
+    media: z
+      .array(
+        z.object({
+          type: z.enum(['image', 'video']),
+          src: z.string(),
+          alt: z.string().optional(),
+          // Optional still image shown before a video plays (path under public/).
+          poster: z.string().optional(),
+        })
+      )
+      .default([]),
     featured: z.boolean().default(false),
     order: z.number().default(99),
   }),
